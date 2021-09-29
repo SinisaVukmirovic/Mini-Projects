@@ -45,6 +45,9 @@ img {
     height: 20px;
     margin: 0;
 }
+    .card-title.animated-bg-text {
+        height: 30px;
+    }
 
 .card-excerpt {
     color: #777;
@@ -69,6 +72,9 @@ img {
     margin-left: 10px;
     width: 100px;
 }
+    .author-info .animated-bg-text {
+        height: 15px;
+    }
 
 .author-info small {
     color: #aaa;
