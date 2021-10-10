@@ -13,13 +13,12 @@ textarea.addEventListener('keyup', e => {
             randomSelect();
         }, 10);
     }
-
 });
 
 const createTags = (input) => {
     const tags = new Set(input.split(',')
-                          .filter(tag => tag.trim() !== '')
-                          .map(tag => tag.trim()));  
+                              .filter(tag => tag.trim() !== '')
+                              .map(tag => tag.trim()));  
 
     tagsElem.innerHTML = '';
 
@@ -35,40 +34,15 @@ const createTags = (input) => {
 const randomSelect = () => {
     const timesToHighlight = 50;
 
-    if (timesToHighlight > 30) {
-        const interval = setInterval(() => {
-            const randomTag = pickRandomTag();
-    
-            highlightTag(randomTag);
-    
-            setTimeout(() => {
-                unHighlightTag(randomTag);
-            }, 200);
-        }, 200);
-    }
-    if (timesToHighlight > 42) {
-        const interval = setInterval(() => {
-            const randomTag = pickRandomTag();
-    
-            highlightTag(randomTag);
-    
-            setTimeout(() => {
-                unHighlightTag(randomTag);
-            }, 500);
-        }, 500);
-    }
+    const interval = setInterval(() => {
+        const randomTag = pickRandomTag();
 
-    if (timesToHighlight > 44 && timesToHighlight < 50) {
-        const interval = setInterval(() => {
-            const randomTag = pickRandomTag();
-    
-            highlightTag(randomTag);
-    
-            setTimeout(() => {
-                unHighlightTag(randomTag);
-            }, 1000);
-        }, 1000);
-    }
+        highlightTag(randomTag);
+
+        setTimeout(() => {
+            unHighlightTag(randomTag);
+        }, 200);
+    }, 200);
 
     setTimeout(() => {
         clearInterval(interval);
